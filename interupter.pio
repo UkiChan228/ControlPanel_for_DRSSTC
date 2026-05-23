@@ -1,0 +1,21 @@
+;
+; Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
+;
+; SPDX-License-Identifier: BSD-3-Clause
+;
+
+.program interrupter
+.wrap_target
+    pull block      ; Ждем, когда процессор пришлет число (длительность импульса)
+    out x, 32       ; Переносим число в счетчик X
+    set pins, 1     ; Включаем оптику
+lp1:
+    jmp x-- lp1     ; Ждем, пока X не станет 0
+    set pins, 0     ; Выключаем оптику
+.wrap
+
+% c-sdk {
+// this is a raw helper function for use by the user which sets up the GPIO output, and configures the SM to output on a particular pin
+
+
+%}
