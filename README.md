@@ -2,18 +2,18 @@
 
 Universal, open-source control panel for Dual Resonant Solid State Tesla Coils (DRSSTC) based on the Raspberry Pi RP2350.
 
-![Platform](https://img.shields.io/badge/Platform-RP2350-blue)
-![Status](https://img.shields.io/badge/Status-Alpha--Development-orange)
-![Hardware](https://img.shields.io/badge/Hardware-AliExpress--Sourced-red)
+![Platform](./files/icons/Platform-RP2350-purple.svg)
+![Status](./files/icons/Status-purple.svg)
 
-[Codeberg](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC) | [Issues](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC/issues)
+
+[Codeberg](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC)
 
 <br/>
 
 ### Table of Contents
 <p>
   <a href="#-overview">Overview</a> <br/>
-  <a href="#%EF%B8%8F-status">Status</a> <br/>
+  <a href="#-status">Status</a> <br/>
   <a href="#-getting-started">Getting Started</a> <br/>
   <a href="#-hardware-choices">Hardware Choices</a> <br/>
   <a href="#-project-history">Project History</a>

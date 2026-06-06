@@ -1,0 +1,20 @@
+<svg width="109" height="20" viewBox="0 0 1090 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Platform: RP2350">
+  <title>Platform: RP2350</title>
+  <linearGradient id="vNGfo" x2="0" y2="100%">
+    <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <mask id="PjtvM"><rect width="1090" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#PjtvM)">
+    <rect width="568" height="200" fill="#555"/>
+    <rect width="522" height="200" fill="#94E" x="568"/>
+    <rect width="1090" height="200" fill="url(#vNGfo)"/>
+  </g>
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="60" y="148" textLength="468" fill="#000" opacity="0.25">Platform</text>
+    <text x="50" y="138" textLength="468">Platform</text>
+    <text x="623" y="148" textLength="422" fill="#000" opacity="0.25">RP2350</text>
+    <text x="613" y="138" textLength="422">RP2350</text>
+  </g>
+  
+</svg>

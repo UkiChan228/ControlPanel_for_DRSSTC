@@ -1,0 +1,20 @@
+<svg width="165.1" height="20" viewBox="0 0 1651 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Status: Alpha-Development">
+  <title>Status: Alpha-Development</title>
+  <linearGradient id="wlaQT" x2="0" y2="100%">
+    <stop offset="0" stop-opacity=".1" stop-color="#EEE"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <mask id="ruqhW"><rect width="1651" height="200" rx="30" fill="#FFF"/></mask>
+  <g mask="url(#ruqhW)">
+    <rect width="454" height="200" fill="#555"/>
+    <rect width="1197" height="200" fill="#94E" x="454"/>
+    <rect width="1651" height="200" fill="url(#wlaQT)"/>
+  </g>
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="60" y="148" textLength="354" fill="#000" opacity="0.25">Status</text>
+    <text x="50" y="138" textLength="354">Status</text>
+    <text x="509" y="148" textLength="1097" fill="#000" opacity="0.25">Alpha-Development</text>
+    <text x="499" y="138" textLength="1097">Alpha-Development</text>
+  </g>
+  
+</svg>
