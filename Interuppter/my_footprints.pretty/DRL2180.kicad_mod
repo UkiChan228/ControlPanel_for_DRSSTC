@@ -1,0 +1,172 @@
+(footprint "DRL2180"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Datasheet" ""
+		(at -1 -1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c30fe891-86d8-46a3-9c95-44a8b3677438")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at -1 -1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bcfcfe8f-2941-4dc4-a441-c45f9193e2ec")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Reference" "REF**"
+		(at 0 -10.15 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5682ddf2-e3ac-4906-8b7a-2c5ec1412e5c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "DRL2180"
+		(at 0 -8.65 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1c86eadf-d992-41e6-828f-5ff5f5850c2f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.45 7.8)
+		(end -4.45 5.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "37f12e09-45aa-4184-bb9f-1e2b1a509a28")
+	)
+	(fp_line
+		(start -4.45 7.8)
+		(end 4.45 7.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "65d6c491-dce7-44ff-8308-dbe5f20247f1")
+	)
+	(fp_line
+		(start 4.45 7.8)
+		(end 4.45 5.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7bdc1fc6-8024-4075-931d-2efea0f57ee3")
+	)
+	(fp_rect
+		(start -5.75 -5.5)
+		(end 5.75 5.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "220e8891-88e3-4c8f-bf24-9ca80559023e")
+	)
+	(fp_rect
+		(start -6.3 -5.8)
+		(end 6.2 8.1)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "3b0d391d-9cf3-4fa1-bf1c-b3ea0f3a9303")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -7.08 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "fdd121d8-6509-482e-96a8-3269d27766de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at -3.85 0.8)
+		(size 3 3)
+		(drill 3)
+		(layers "*.Mask")
+		(uuid "93e4c057-44e9-4de7-9e1c-bbfb3eab260e")
+	)
+	(pad "" np_thru_hole circle
+		(at 3.85 0.8)
+		(size 3 3)
+		(drill 3)
+		(layers "*.Mask")
+		(uuid "40cd4a81-d657-4d57-a8ff-0129d5d7d357")
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 -2.9)
+		(size 1.2 1.2)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "73a7de50-9b54-47f4-8ae2-fb622ff2b474")
+	)
+	(pad "2" thru_hole circle
+		(at 0 -2.9)
+		(size 1.2 1.2)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e5e957ec-e8d3-42e1-9f3c-017653c52287")
+	)
+	(pad "3" thru_hole circle
+		(at 2.54 -2.9)
+		(size 1.2 1.2)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0106c0a2-f785-4677-975c-12b7582f049b")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/uki/Documents/KiCad/10.0/3dmodels/DLR2180-без крепления сверху.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)
