@@ -16,7 +16,7 @@ Universal, open-source control panel for Dual Resonant Solid State Tesla Coils (
   <a href="#-project-history">Project History</a>
 </p>
 
-<img src="https://codeberg.org/assets/img/logo.svg" width="50" valign="middle"> Codeberg
+
 
 <br/>
 
