@@ -593,7 +593,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerber/",
       "specctra_dsn": "../../../../../Desktop/Interuppter.dsn",
       "vrml": ""
     },

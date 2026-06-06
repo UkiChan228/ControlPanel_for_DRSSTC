@@ -35,6 +35,7 @@ The primary goal is to provide a robust, noise-immune controller that can reliab
 > This project is currently in the **Alpha** development phase. The core hardware architecture is established, but firmware and features are actively being updated. Treat it as experimental.
 
 ---
+### 3D Screenshot
 
 ![Screnshoot1](./files/1.png)
 ![Screnshoot2](./files/2.png)
@@ -65,7 +66,7 @@ Why did I choose the **RP2350** instead of something like the **STM32H507** or o
 
 If we look at **STM32** alternatives, we should also mention Chinese compatible MCUs like the **AT32, GD32, APM32,** and CH32. These are essentially enhanced clones of the original **STM32**. Out of these four, GD32 (highly preferred) and **AT32** are the best choices and represent solid, reliable options to buy on AliExpress. 
 
-But let's return to the RP2350. Its absolute killer feature is the PIO (Programmable I/O)—tiny state machines/microprocessors that run completely independently of the main CPU cores. The **RP2350** features three PIO blocks with four state machines each, giving you 12 independent processors in total. It is essentially a mini-FPGA built right into a microcontroller! This lets you implement almost any proprietary interface or even design your own. This is incredibly useful for my Remote Control project because I can send control pulses to a Tesla coil via fiber optics. I don't have to worry about what happens if the main processor hangs or if another button is pressed, because these tasks are handled by entirely separate hardware subsystems within the same silicon die.
+But let's return to the RP2350. Its absolute killer feature is the PIO (Programmable I/O)—tiny state machines/microprocessors that run completely independently of the main CPU cores. The **RP2350** features three PIO blocks with 3 state machines each, giving you 12 independent processors in total. It is essentially a mini-FPGA built right into a microcontroller! This lets you implement almost any proprietary interface or even design your own. This is incredibly useful for my Remote Control project because I can send control pulses to a Tesla coil via fiber optics. I don't have to worry about what happens if the main processor hangs or if another button is pressed, because these tasks are handled by entirely separate hardware subsystems within the same silicon die.
 
 In short, the RP2350 wins on cost-efficiency and unique features that can easily replace much more expensive **STM32** chips. Plus, it's a very new chip, which is also a great advantage.
 

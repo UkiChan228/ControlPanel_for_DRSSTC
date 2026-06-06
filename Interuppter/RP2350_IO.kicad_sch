@@ -8925,7 +8925,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Conn_JST:JST_ZH_S3B-ZR-SM4A-TF_1x03-1MP_P1.50mm_Horizontal"
+		(property "Footprint" "Connector_Molex:Molex_PicoBlade_53261-0371_1x03-1MP_P1.25mm_Horizontal"
 			(at 116.84 149.86 0)
 			(hide yes)
 			(show_name no)
