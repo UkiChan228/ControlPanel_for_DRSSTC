@@ -5,9 +5,6 @@ Universal, open-source control panel for Dual Resonant Solid State Tesla Coils (
 ![Platform](./files/icons/Platform-RP2350-purple.svg)
 ![Status](./files/icons/Status-purple.svg)
 
-
-[Codeberg](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC)
-
 <br/>
 
 ### Table of Contents
@@ -19,7 +16,7 @@ Universal, open-source control panel for Dual Resonant Solid State Tesla Coils (
   <a href="#-project-history">Project History</a>
 </p>
 
-![Logo](./files/Codeberg_logo.svg)
+<img src=./files/Codeberg_logo.svg width=100 height=100>
 
 <br/>
 
