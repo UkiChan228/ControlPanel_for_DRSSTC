@@ -2,16 +2,11 @@
 
 Universal, open-source control panel for Dual Resonant Solid State Tesla Coils (DRSSTC) based on the Raspberry Pi RP2350.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-RP2350-blue.svg?style=flat-square&logo=raspberrypi" alt="Platform">
-  <img src="https://img.shields.io/badge/Status-Alpha--Development-orange.svg?style=flat-square" alt="Status">
-  <img src="https://img.shields.io/badge/Hardware-AliExpress--Sourced-red.svg?style=flat-square" alt="Hardware">
-</p>
+![Platform](https://img.shields.io/badge/Platform-RP2350-blue)
+![Status](https://img.shields.io/badge/Status-Alpha--Development-orange)
+![Hardware](https://img.shields.io/badge/Hardware-AliExpress--Sourced-red)
 
-<p align="center">
-  <a href="https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC" title="Codeberg Repository">Codeberg</a> |
-  <a href="https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC/issues" title="Bug reports and feature requests">Issues</a>
-</p>
+[Codeberg](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC) | [Issues](https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC/issues)
 
 <br/>
 
@@ -56,38 +51,37 @@ git submodule update --init --recursive
 
 ---
 
-## 💡 Hardware Choices
+## Hardware Architecture & Design Choices
 
 ### 1. MCU: Why RP2350 and not STM32?
-The decision to use the **RP2350** instead of standard STM32 chips (like the STM32H or G series) came down to two major factors: **counterfeits and unique hardware features**.
+Why did I choose the **RP2350** instead of something like the **STM32H507** or other H-series STM32 chips? It came down to high costs and counterfeits. If you want to buy an inexpensive **STM32** on AliExpress, almost all of them turn out to be clones or fakes. If you do manage to find an original, the price is quite steep. As a reliable example of genuine hardware, we can look at WeAct Studio. They have an excellent reputation, sell original dev boards, and their GitHub is an amazing resource containing schematics for all of their modules. Currently, the **RP2350** from **WeAct Studio** costs about $3. By comparison, the **STM32H** and **STM32G** series cost anywhere from $5.50 to $10. Of course, those offer more processing power and higher-quality peripherals like timers—after all, the STM32 architecture is time-tested and highly trusted. 
 
-*   **The Counterfeit Problem:** Finding genuine, reasonably priced STM32 microcontrollers on open marketplaces like AliExpress is incredibly difficult; almost all of them are clones or fakes. Original chips are expensive. In contrast, reputable manufacturers like *WeAct Studio* sell genuine RP2350 boards for around $3, whereas original STM32 equivalents cost between $5.50 and $10.
-*   **The PIO (Programmable I/O) Advantage:** The absolute killer feature of the RP2350 is its PIO blocks (12 independent state machines in total). This functions like a mini-FPGA directly inside the MCU. For a Tesla coil controller, this is crucial: we can offload the critical fiber-optic pulse generation entirely to the PIO. Even if the main CPU hangs, freezes, or is busy rendering the UI, the PIO continues to execute pulses safely and independently at the hardware level.
+If we look at **STM32** alternatives, we should also mention Chinese compatible MCUs like the **AT32, GD32, APM32,** and CH32. These are essentially enhanced clones of the original **STM32**. Out of these four, GD32 (highly preferred) and **AT32** are the best choices and represent solid, reliable options to buy on AliExpress. 
 
-While Chinese STM32 alternatives (like GD32, AT32, APM32, CH32) exist and are decent options, they still lack the dedicated PIO block that makes the RP2350 uniquely suited for this application.
+But let's return to the RP2350. Its absolute killer feature is the PIO (Programmable I/O)—tiny state machines/microprocessors that run completely independently of the main CPU cores. The **RP2350** features three PIO blocks with four state machines each, giving you 12 independent processors in total. It is essentially a mini-FPGA built right into a microcontroller! This lets you implement almost any proprietary interface or even design your own. This is incredibly useful for my Remote Control project because I can send control pulses to a Tesla coil via fiber optics. I don't have to worry about what happens if the main processor hangs or if another button is pressed, because these tasks are handled by entirely separate hardware subsystems within the same silicon die.
 
-### 2. Display and User Interface
-The system uses the **MSP3526**, a 3.5-inch IPS display ($480 \times 320$ pixels) with a capacitive touchscreen. 
+In short, the RP2350 wins on cost-efficiency and unique features that can easily replace much more expensive **STM32** chips. Plus, it's a very new chip, which is also a great advantage.
 
-*   **IPS Panel:** Enables wide viewing angles and supports up to 16 million colors, allowing for comfortable navigation and clear real-time diagnostic graphs.
-*   **Safety Interlock:** To prevent accidental triggers or interference during operation, touchscreen interrupts are completely ignored at the firmware level while the controller is actively transmitting pulses to the coil.
+### 2. Display and UI
+The UI runs on an **MSP3526**, a 3.5-inch IPS display (480x320) with a capacitive touchscreen. The IPS panel allows for 16 million colors, making it comfortable to view real-time diagnostic graphs and navigate menus. 
 
-### 3. Power Supply & Charging
-*   **Symmetrical Battery Layout:** The board is powered by two **18650 Li-ion cells** mounted in holders placed symmetrically on the PCB to balance the weight of the handheld unit.
-*   **High-Frequency Regulation:** Voltage regulation is handled by the **TLV62130** step-down buck converter (a design choice inspired by the control boards of Antminer S9 miners, which run five of these converters). Operating at a high switching frequency of **1.25 MHz to 2.5 MHz** reduces output voltage ripple significantly, eliminating the need for bulky filtering capacitors. It also offers proven durability in harsh, noisy environments.
-*   **USB-C Charging:** Safe and efficient charging of the 2S battery pack is managed by the **IP2326** switching charger IC.
+*Safety feature:* To prevent accidental triggers, touchscreen interrupts are completely ignored at the firmware level while the RP2350 is actively transmitting pulses to the coil.
 
-*All active and passive components are standard and can be easily sourced from AliExpress, making this build straightforward to replicate.*
+### 3. Power Supply
+The board is powered by two **18650 Li-ion cells** mounted symmetrically for physical balance. 
+
+For voltage regulation, I used the **TLV62130** step-down buck converter. I actually borrowed this idea from the Antminer S9 control boards (which use five of them). It operates at a high switching frequency (1.25MHz - 2.5MHz). Because of this high frequency, voltage ripple is minimal, and there is no need for massive filtering capacitors. It is also extremely durable, having been proven in harsh ASIC mining environments.
+
+Charging the 2S battery pack is handled by an **IP2326** IC, which is a dedicated, highly efficient switching charger for 2-series lithium setups.
+
+All components were selected so they can be easily sourced from AliExpress, allowing anyone to replicate this build.
 
 ---
 
-## 🌟 Project History
+## Project History & Acknowledgments
 
-This project represents the dedication and effort of a single teenage developer fascinated by high-voltage electronics. 
+This project has been in active development from late January 2026 to June. It represents the time and effort of a single teenager fascinated by high-voltage engineering.
 
-The project has gone through a massive evolution since its inception:
-*   **Late January 2026:** Started as a simple, low-power breadboard setup using an ATmega328P, a character LCD1602, a physical encoder, one LED, and a basic start button.
-*   **Mid-April 2026:** The project transition was made to a much more powerful architecture, moving away from 8-bit limits to the RP2350 to allow for an IPS graphical interface, touchscreen control, and independent hardware safety loops.
-*   **June 2026:** Final hardware iteration and completion of the core layout.
+It originally started as a simple breadboard project with an ATmega328P, a character LCD1602, a rotary encoder, and a single start button. By mid-April, new ideas naturally pushed the development further, eventually evolving into the RP2350-based device you see today.
 
-Special thanks to the **PCBWay** design contest for setting up a concrete deadline. Having a specific target date to complete the hardware provided the necessary momentum to bring this project to life.
+Special thanks to the **PCBWay** contest for providing a concrete deadline. Having a specific date to finish the hardware was a huge motivation to get this project across the finish line.
