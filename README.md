@@ -51,7 +51,7 @@ To clone the repository along with the required submodules for graphics librarie
 # Clone the repository
 git clone https://codeberg.org/uki_chan228/ControlPanel_for_DRSSTC  
 
-# Initialize and update all submodules recursively
+# Initialize and update submodules and lvgl-9.5.0
 cd ControlPanel_for_DRSSTC
 git submodule update --init --recursive
 ```
@@ -90,5 +90,3 @@ All components were selected so they can be easily sourced from AliExpress, allo
 This project has been in active development from late January 2026 to June. It represents the time and effort of a single teenager fascinated by high-voltage engineering.
 
 It originally started as a simple breadboard project with an ATmega328P, a character LCD1602, a rotary encoder, and a single start button. By mid-April, new ideas naturally pushed the development further, eventually evolving into the RP2350-based device you see today.
-
-Special thanks to the **PCBWay** contest for providing a concrete deadline. Having a specific date to finish the hardware was a huge motivation to get this project across the finish line.

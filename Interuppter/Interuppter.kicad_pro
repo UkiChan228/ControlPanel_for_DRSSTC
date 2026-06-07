@@ -605,7 +605,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "..\\files\\BOM.csv",
+    "bom_export_filename": "Interuppter.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
