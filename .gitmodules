@@ -1,9 +1,4 @@
 [submodule "lib/lvgl-9.5.0"]
 	path = lib/lvgl-9.5.0
 	url = https://github.com/lvgl/lvgl
-[submodule "lib/TFT_eSPI"]
-	path = lib/TFT_eSPI
-	url = https://github.com/Bodmer/TFT_eSPI
-[submodule "lib/Adafruit_FT6x36"]
-	path = lib/Adafruit_FT6x36
-	url = https://github.com/adafruit/Adafruit_FT6x36
+
