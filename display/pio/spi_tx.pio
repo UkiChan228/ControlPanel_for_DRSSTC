@@ -1,0 +1,27 @@
+.program spi_tx
+.side_set 1
+
+; Простой 8-битный SPI передатчик. 
+; Данные выходят на 'out', SCK на 'side_set'
+.wrap_target
+    out pins, 1   side 0 [1] ; Выдаем бит данных, SCK = 0
+    nop           side 1 [1] ; Ждем, SCK = 1
+.wrap
+
+% c-sdk {
+#include "hardware/gpio.h"
+static inline void pio_spi_tx_init(PIO pio, uint sm, uint prog_offs, uint data_bits, uint clk_div, uint pin_sck, uint pin_mosi) {
+    pio_sm_config c = spi_tx_program_get_default_config(prog_offs);
+    sm_config_set_out_pins(&c, pin_mosi, 1);
+    sm_config_set_sideset_pins(&c, pin_sck);
+    sm_config_set_out_shift(&c, false, true, data_bits); // Сдвиг влево
+    pio_sm_set_clkdiv(pio, sm, clk_div);
+    
+    pio_gpio_init(pio, pin_mosi);
+    pio_gpio_init(pio, pin_sck);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_mosi, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_sck, 1, true);
+    pio_sm_init(pio, sm, prog_offs, &c);
+    pio_sm_set_enabled(pio, sm, true);
+}
+%}

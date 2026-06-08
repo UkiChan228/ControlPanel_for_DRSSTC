@@ -1441,6 +1441,9 @@
     #define LV_QNX_BUF_COUNT        1    /**< 1 or 2 */
 #endif
 
+#define LV_USE_FT6X36           1 /* Enabled for FT6x36 touchscreen driver */
+#endif
+
 /** Enable or disable for external data and destructor function */
 #define LV_USE_EXT_DATA   0
 

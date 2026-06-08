@@ -35,13 +35,20 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Interupter Interupter.cpp display.cpp)
+add_executable(Interupter Interupter.cpp  
+    ${CMAKE_CURRENT_LIST_DIR}/touch/FT6336/FT3663.cpp 
+    ${CMAKE_CURRENT_LIST_DIR}/touch/touch.cpp 
+
+    ${CMAKE_CURRENT_LIST_DIR}/display/ST7796/ST7796.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/display/display.cpp
+)
 
 pico_set_program_name(Interupter "Interupter")
 pico_set_program_version(Interupter "0.1")
 
 # Generate PIO header
-pico_generate_pio_header(Interupter ${CMAKE_CURRENT_LIST_DIR}/interupter.pio)
+pico_generate_pio_header(Interupter ${CMAKE_CURRENT_LIST_DIR}/touch/pio/i2c.pio)
+pico_generate_pio_header(Interupter ${CMAKE_CURRENT_LIST_DIR}/display/pio/spi_tx.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(Interupter 0)
@@ -62,13 +69,10 @@ add_subdirectory(lib/lvgl-9.5.0)
 
 # Add any user requested libraries
 target_link_libraries(Interupter
-        TFT_eSPI
         lvgl
 
         pico_multicore 
         hardware_pwm
-        hardware_spi
-        hardware_i2c
         hardware_dma
         hardware_pio
         hardware_clocks
