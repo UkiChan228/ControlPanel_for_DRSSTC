@@ -61,7 +61,8 @@ add_subdirectory(lib/lvgl-9.5.0)
 
 
 # Add any user requested libraries
-target_link_libraries(Interupter 
+target_link_libraries(Interupter
+        TFT_eSPI
         lvgl
 
         pico_multicore 

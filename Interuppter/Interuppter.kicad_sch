@@ -2530,16 +2530,6 @@
 		)
 		(uuid "8530b5d7-6c70-44cc-95c6-41fced63e01c")
 	)
-	(text "My display has a reversible connector. \nSo, the connector itself is upside down.\n"
-		(exclude_from_sim no)
-		(at 36.83 148.082 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "89489d9e-0b95-4ea8-b705-680390d237f5")
-	)
 	(text "BUTTON Start pulse"
 		(exclude_from_sim no)
 		(at 85.09 181.61 0)

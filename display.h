@@ -6,19 +6,18 @@
 // Константы пинов (используем constexpr для C++, либо просто константы для C)
 namespace display_gpio {
     // TouchScreen I2C
-    const uint I2C0_SDA = 0; // На RP2350 лучше использовать GP0
-    const uint I2C0_SCL = 1;
+    const uint I2C0_SDA = 1; 
+    const uint I2C0_SCL = 5;
     const uint T_RST    = 4;
-    const uint T_INT    = 5;
+    const uint T_INT    = 0;
 
     // SPI Display
     const uint SPI_SCK  = 10;
     const uint SPI_MOSI = 11;
-    const uint SPI_MISO = 12; // Не используется для LCD, но нужен для SD-карты
-    const uint LCD_DC   = 13; // Он же RS
-    const uint LCD_CS   = 14;
-    const uint LCD_RST  = 15;
-    const uint LCD_LED  = 16;
+    const uint SPI_MISO = 13; 
+    const uint LCD_CS   = 15;
+    const uint LCD_RST  = 14;
+    const uint LCD_LED  = 15;
 }
 
 // Прототипы функций (чтобы main их видел)

@@ -18344,6 +18344,32 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "14\n"
+		(at 174.7225 126.8 0)
+		(layer "F.SilkS")
+		(uuid "3840da7e-47d4-411b-bedf-c095723d10f3")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "1"
+		(at 175.0625 142.09 0)
+		(layer "F.SilkS")
+		(uuid "78662463-83e1-495c-86e4-6b740bd510ad")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(segment
 		(start 252.255 106.325)
 		(end 253.03 106.325)
