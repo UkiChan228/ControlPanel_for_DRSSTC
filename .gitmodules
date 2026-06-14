@@ -2,3 +2,6 @@
 	path = lib/lvgl-9.5.0
 	url = https://github.com/lvgl/lvgl
 
+[submodule "lib/LovyanGFX-1.2.21"]
+	path = lib/LovyanGFX-1.2.21
+	url = https://github.com/lovyan07/LovyanGFX

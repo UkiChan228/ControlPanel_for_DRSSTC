@@ -1362,7 +1362,7 @@
 #define LV_USE_TFT_ESPI         0
 
 /** Interface for Lovyan_GFX */
-#define LV_USE_LOVYAN_GFX         0
+#define LV_USE_LOVYAN_GFX         1
 
 #if LV_USE_LOVYAN_GFX
     #define LV_LGFX_USER_INCLUDE "lv_lgfx_user.hpp"
@@ -1389,7 +1389,7 @@
 /* Drivers for LCD devices connected via SPI/parallel port */
 #define LV_USE_ST7735        0
 #define LV_USE_ST7789        0
-#define LV_USE_ST7796        0
+#define LV_USE_ST7796        1
 #define LV_USE_ILI9341       0
 #define LV_USE_FT81X         0
 #define LV_USE_NV3007        0
